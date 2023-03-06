@@ -3,6 +3,7 @@ import Layout from './components/Layout';
 import ContactList from './components/ContactList';
 import AddContact from './components/Add Contact';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './index.css';
 
 function App() {
   return (

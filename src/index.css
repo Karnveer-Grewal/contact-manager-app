@@ -1,0 +1,25 @@
+:root {
+  --primaryWhite: #fdfffc;
+  --primaryBlue: #003559;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primaryWhite);
+}
+
+/* Header Styling */
+.header--container {
+  padding: 10px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header--container > h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: var(--primaryBlue);
+  text-align: center;
+}
