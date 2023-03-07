@@ -60,11 +60,12 @@ body {
 .contact-form button {
   margin-top: 30px;
   width: 300px;
-  padding: 4px;
-  background-color: var(--primaryRed);
-  border: 2px solid var(--primaryBlue);
+  padding: 8px;
+  background-color: var(--primaryBlue);
   color: var(--primaryWhite);
+  border: none;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 /* Contact List Styling */
@@ -74,7 +75,7 @@ body {
 
 .contact--list > a {
   text-decoration: none;
-  background-color: var(--primaryRed);
+  background-color: var(--primaryBlue);
   color: var(--primaryWhite);
   padding: 5px;
   display: block;
@@ -95,22 +96,30 @@ body {
   align-items: center;
   padding: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  height: 50px;
 }
 
 .contact--info {
   margin-right: auto;
 }
 
-.contact--info > p {
-  margin: 0;
-}
-
 .contact--name {
   font-size: 1em;
   font-weight: 600;
+  margin: 10px 0 0 0;
 }
 
 .contact--email {
   font-size: 0.8em;
   font-weight: 500;
+  margin-top: 3px;
+}
+
+.contact--delete {
+  background-color: var(--primaryRed);
+  color: var(--primaryWhite);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
 }

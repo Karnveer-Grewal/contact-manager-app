@@ -10,7 +10,12 @@ const ContactCard = (props) => {
         <p className='contact--email'>{email}</p>
       </div>
       <div className='contact--buttons'>
-        <button>Delete Contact</button>
+        <button
+          className='contact--delete'
+          onClick={() => props.deleteContact(props.id)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

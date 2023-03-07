@@ -10,7 +10,10 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   const addContactHandler = (contact) => {
-    setContacts((prevContacts) => [...prevContacts, contact]);
+    setContacts((prevContacts) => [
+      ...prevContacts,
+      { id: prevContacts.length + 1, ...contact },
+    ]);
   };
 
   useEffect(() => {
@@ -27,11 +30,23 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
+  const deleteContact = (id) => {
+    console.log(id);
+    setContacts((prevContacts) =>
+      prevContacts.filter((prevContact) => prevContact.id !== id)
+    );
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<ContactList contacts={contacts} />} />
+          <Route
+            path='/'
+            element={
+              <ContactList contacts={contacts} deleteContact={deleteContact} />
+            }
+          />
           <Route
             path='/add'
             element={<AddContact addContactHandler={addContactHandler} />}
