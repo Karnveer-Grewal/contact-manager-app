@@ -90,6 +90,12 @@ body {
   flex-direction: column;
 }
 
+.contact--container > a {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
 .contact--card {
   display: flex;
   margin-top: 20px;
@@ -99,8 +105,20 @@ body {
   height: 50px;
 }
 
-.contact--info {
+.contact--card > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
   margin-right: auto;
+}
+
+.contact--image {
+  width: 30px;
+}
+
+.contact--info {
+  margin-left: 20px;
 }
 
 .contact--name {
@@ -122,4 +140,45 @@ body {
   border-radius: 10px;
   padding: 5px;
   cursor: pointer;
+}
+
+/* Contact Details Styling */
+.details--container > a {
+  display: block;
+  text-decoration: none;
+  color: var(--primaryWhite);
+  background-color: var(--primaryBlue);
+  width: 150px;
+  padding: 10px;
+  margin: 30px auto;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.details--card {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 50px;
+  border: 1px solid var(--primaryBlue);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.details--card > img {
+  width: 100px;
+}
+
+.details--card > h4 {
+  margin: 30px 0 0 0;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.details--card > p {
+  margin: 10px 0 0 0;
 }
