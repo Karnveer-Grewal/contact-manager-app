@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className='header--container'>
-      <h1>Contact Manager</h1>
+      <Link to='/'>Contact Manager</Link>
     </header>
   );
 };
