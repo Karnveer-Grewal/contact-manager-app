@@ -64,4 +64,53 @@ body {
   background-color: var(--primaryRed);
   border: 2px solid var(--primaryBlue);
   color: var(--primaryWhite);
+  border-radius: 3px;
+}
+
+/* Contact List Styling */
+.contact--list {
+  padding: 30px;
+}
+
+.contact--list > a {
+  text-decoration: none;
+  background-color: var(--primaryRed);
+  color: var(--primaryWhite);
+  padding: 5px;
+  display: block;
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.contact--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact--card {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact--info {
+  margin-right: auto;
+}
+
+.contact--info > p {
+  margin: 0;
+}
+
+.contact--name {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.contact--email {
+  font-size: 0.8em;
+  font-weight: 500;
 }

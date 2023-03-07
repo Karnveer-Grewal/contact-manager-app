@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import ContactList from './components/ContactList';
 import AddContact from './components/AddContact';
@@ -6,12 +6,36 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 function App() {
+  const LOCAL_STORAGE_KEY = 'contacts';
+  const [contacts, setContacts] = useState([]);
+
+  const addContactHandler = (contact) => {
+    setContacts((prevContacts) => [...prevContacts, contact]);
+  };
+
+  useEffect(() => {
+    const retrieveContacts = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY)
+    );
+
+    if (retrieveContacts) {
+      setContacts(retrieveContacts);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+  }, [contacts]);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<ContactList />} />
-          <Route path='/add' element={<AddContact />} />
+          <Route path='/' element={<ContactList contacts={contacts} />} />
+          <Route
+            path='/add'
+            element={<AddContact addContactHandler={addContactHandler} />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
