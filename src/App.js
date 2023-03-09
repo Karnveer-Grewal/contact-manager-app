@@ -10,6 +10,8 @@ import './index.css';
 
 function App() {
   const [contacts, setContacts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const addContactHandler = async (contact) => {
     try {
@@ -50,6 +52,23 @@ function App() {
     }
   };
 
+  const searchHandler = (e) => {
+    setSearchTerm(e.target.value);
+    if (searchTerm !== '') {
+      const filteredContacts = contacts.filter((contact) => {
+        return Object.values(contact)
+          .join(' ')
+          .toLowerCase()
+          .includes(searchTerm.toLocaleLowerCase());
+      });
+      setSearchResults(filteredContacts);
+    } else {
+      setSearchResults(contacts);
+    }
+  };
+
+  console.log(searchTerm);
+
   useEffect(() => {
     const getContacts = async () => {
       try {
@@ -63,10 +82,6 @@ function App() {
     getContacts();
   }, []);
 
-  useEffect(() => {
-    // localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
-  }, [contacts]);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -74,7 +89,12 @@ function App() {
           <Route
             path='/'
             element={
-              <ContactList contacts={contacts} deleteContact={deleteContact} />
+              <ContactList
+                contacts={searchTerm.length < 1 ? contacts : searchResults}
+                deleteContact={deleteContact}
+                searchTerm={searchTerm}
+                searchHandler={searchHandler}
+              />
             }
           />
           <Route

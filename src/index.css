@@ -81,10 +81,21 @@ body {
   display: block;
   text-align: center;
   width: 200px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
   border-radius: 50px;
 }
 
+.contact--search {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+  border-radius: 50px;
+  height: 20px;
+  border: 1px solid var(--primaryBlue);
+}
 .contact--container {
   display: flex;
   flex-direction: column;

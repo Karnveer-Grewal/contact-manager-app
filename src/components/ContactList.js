@@ -16,8 +16,21 @@ const ContactList = (props) => {
 
   return (
     <main className='contact--list'>
+      <input
+        type='text'
+        placeholder='Search Contacts'
+        className='contact--search'
+        onChange={props.searchHandler}
+        value={props.searchTerm}
+      />
       <Link to='/add'>Add Contact</Link>
-      <div className='contact--container'>{contactsElements}</div>
+      <div className='contact--container'>
+        {contactsElements.length > 0 ? (
+          contactsElements
+        ) : (
+          <p>No Contacts Available</p>
+        )}
+      </div>
     </main>
   );
 };
