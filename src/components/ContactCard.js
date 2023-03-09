@@ -21,6 +21,9 @@ const ContactCard = (props) => {
         >
           Delete
         </button>
+        <Link to={`/edit/${props.id}`} style={{ textDecoration: 'none' }}>
+          <button className='contact--update'>Update</button>
+        </Link>
       </div>
     </div>
   );
