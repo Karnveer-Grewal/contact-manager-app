@@ -54,6 +54,9 @@ function App() {
 
   const searchHandler = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  useEffect(() => {
     if (searchTerm !== '') {
       const filteredContacts = contacts.filter((contact) => {
         return Object.values(contact)
@@ -61,13 +64,10 @@ function App() {
           .toLowerCase()
           .includes(searchTerm.toLocaleLowerCase());
       });
-      setSearchResults(filteredContacts);
-    } else {
-      setSearchResults(contacts);
-    }
-  };
 
-  console.log(searchTerm);
+      setSearchResults(filteredContacts);
+    }
+  }, [searchTerm]);
 
   useEffect(() => {
     const getContacts = async () => {
