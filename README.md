@@ -1,7 +1,7 @@
 
 # Contact Manager App
 
-This is a basic application to manage a user's contacts using
+This is a basic application to manage a user's contacts using React. API calls were made to a local server that is not deployed.
 
 
 ## Frontend
