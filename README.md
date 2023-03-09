@@ -33,7 +33,11 @@ This is a basic application to manage a user's contacts using React. API calls w
 
 ### Edit Contact
 
-![Edit](https://github.com/Karnveer-Grewal/contact-manager-app/blob/main/Screenshots/contact-manager-edit.JPG?raw=true))
+![Edit](https://github.com/Karnveer-Grewal/contact-manager-app/blob/main/Screenshots/contact-manager-edit.JPG?raw=true)
+
+### Search Contact
+
+![Search](https://github.com/Karnveer-Grewal/contact-manager-app/blob/main/Screenshots/contact-manager-search.JPG?raw=true)
 
 
 # Getting Started with Create React App
